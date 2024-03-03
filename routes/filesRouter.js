@@ -1,5 +1,5 @@
 import express from "express";
-import { createFile, getFiles } from "../controllers/filesControllers.js";
+import { createFile, getFiles , getFile} from "../controllers/filesControllers.js";
 import validateBody from "../helpers/validateBody.js";
 import { createFilesSchema } from "../schemas/filesSchemas.js";
 import { checkExtations } from "../middlewars/checkExtations.js";
@@ -14,4 +14,8 @@ filesRouter.post(
 );
 
 filesRouter.get("/", getFiles);
+filesRouter.get("/:filename", getFile);
 export default filesRouter;
+
+
+
